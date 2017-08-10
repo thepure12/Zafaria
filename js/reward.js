@@ -1,5 +1,5 @@
-function Reward(exp, item)
+function Reward(exp, itemID)
 {
 	this.experience = exp;
-	this.item = Item.call("test", "description");
+	this.itemID = itemID;
 }
