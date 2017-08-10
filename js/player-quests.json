@@ -1,9 +1,7 @@
-[
-	{
-		"questName": "Test Quest",
-		"description": "Test Description",
-		"isCompleted": true,
-		"completionType": "Completion Type",
-		"reward": [200, 1]
-	}
-]
+{
+	"questName": "Test Quest",
+	"description": "Test Description",
+	"isCompleted": true,
+	"completionType": "Completion Type",
+	"reward": [200, 1]
+}
