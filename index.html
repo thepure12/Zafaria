@@ -10,6 +10,9 @@
 	<script type="text/javascript" src="js/quest-manager.js"></script>
 	<script type="text/javascript" src="js/quest.js"></script>
 	<script type="text/javascript" src="js/reward.js"></script>
+	<script type="text/javascript" src="js/preload.js"></script>
+	<script type="text/javascript" src="js/create.js"></script>
+	<script type="text/javascript" src="js/update.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -19,64 +22,6 @@
 <script type="text/javascript">
 
 	var game = new Phaser.Game(1200, 600, Phaser.AUTO, "", { preload: preload, create: create, update: update });
-
-	function preload() 
-	{
-
-		game.load.image("background", "assets/background.png");
-		game.load.spritesheet('knight', 'assets/knight.png', 587, 707);
-	}
-
-	function create() 
-	{
-		this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-		//this.scale.pageAlignHorizontally = true;
-		this.scale.pageAlignVertically = true;
-		this.scale.pageAlignHorizontally = true;
-
-		game.physics.startSystem(Phaser.Physics.ARCADE);
-		game.add.sprite(0, game.world.height - game.cache.getImage("background").height, "background")
-		player = game.add.sprite(0, game.world.height - 300, 'knight');
-		player.scale.setTo(.3, .3);
-		player.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 10, true);
-    	player.animations.add('right', [12, 13, 14, 15, 16, 17, 18 , 19, 20, 21], 10, true);
-
-    	game.physics.arcade.enable(player);
-    	player.body.bounce.y = 0.2;
-	    //player.body.gravity.y = 300;
-	    player.body.collideWorldBounds = true;
-
-	    cursors = game.input.keyboard.createCursorKeys();
-	}
-
-	function update() 
-	{
-		
-
-		//  Reset the players velocity (movement)
-	    player.body.velocity.x = 0;
-
-	    if (cursors.left.isDown)
-	    {
-	        //  Move to the left
-	        player.body.velocity.x = -300;
-
-	        player.animations.play('left');
-	    }
-	    else if (cursors.right.isDown)
-	    {
-	        //  Move to the right
-	        player.body.velocity.x = 300;
-
-	        player.animations.play('right');
-	    }
-	    else
-	    {
-	        //  Stand still
-	        player.animations.stop();
-	        player.frame = 11;
-	    }
-	}
 
 </script>
 </html>
