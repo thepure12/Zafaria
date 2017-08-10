@@ -2,5 +2,8 @@ var items;
 
 function ItemManager()
 {
-	items = JSON.parse();
+	$.getJSON('../items.json', function(data) 
+	{         
+	    alert(data);
+	});
 }
